@@ -1,0 +1,27 @@
+{%  load staticfiles   %}
+{%  block extra_css  %}
+	<link rel="stylesheet" type="text/css" 
+		href="{% static "css/mycss.css " %}" />
+{% endblock extra_css %}
+<html>
+     
+	<head>
+		<meta charset="UTF-8"> 
+		<title>{% block title %}{% endblock %} </title>
+	</head>
+	 
+	<body>
+		 
+		<div class = "header">
+		   {% block header_block %}{% endblock %}
+		</div>
+		  
+		<div class="main">
+			{% block body_block %}{% endblock %}
+		</div>
+		
+		<div class="footer">
+		  <p>Emilio Aced, Roberto Alcover</p>
+		</div>
+	</body>
+</html>

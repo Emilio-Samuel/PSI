@@ -1,0 +1,33 @@
+{% extends 'shop/base.html' %}
+{% load staticfiles %}
+{% block title %}Main page{% endblock %}
+{% block header_block %} 
+	<h1>Index Page</h1>
+{% endblock %}
+{% block body_block %}
+	<div class = "row">
+        <div class = "fixedColumn">
+			{% if categories %}
+				<ul>
+					{% for category in categories %}
+						<li>
+							
+							<a href="#">{{ category.catName }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			{% else %}
+				<strong>There are no categories present.</strong>
+			{% endif %}	
+	    </div>
+	    {% for product in products %}
+			<div class = "column">
+				<div class = "content">
+					<img src ="{product.image}" alt = "{product.prodName}">
+					<a href = "#">{{ product.prodName }} </a>
+					<p>{ product.price }</p>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}
