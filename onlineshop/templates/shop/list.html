@@ -1,0 +1,41 @@
+{% extends 'shop/base.html' %}
+{% load staticfiles %}
+{% block title %}
+	{% if category %}
+		{{category.catName}}
+	{% else %}
+		Categorias
+	{% endif %}	
+{% endblock %}
+{% block header_block %}
+	{% if category %}
+		<h1>{{category.catName}}</h1>
+	{% else %}
+		<h1>Categorias</h1>
+	{% endif %}	
+{% endblock %}
+
+{% block body_block %}
+	<div class = "row">
+		{% if categories %}
+			<div class = "fixedColumn">
+				<ul>
+					{% for category in categories %}
+						<li>
+							
+							<a href="{% url 'shop:product_list_by_category'  category.catSlug %}">{{ category.catName }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}	
+		{% for product in products %}
+			<div class = "column">
+				<div class = "content">
+					<img src ="/media/{{product.image}}" alt = {{product.prodName}}>
+					<a href = "#">{{ product.prodName }} </a>
+					<p>{{ product.price }}</p>
+				</div>
+			</div>
+		{% endfor %}
+{% endblock %}

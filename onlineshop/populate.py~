@@ -160,7 +160,7 @@ def populate():
 
 def add_prod(cat, prodName, image, description, price, stock, availability):
 	p = Product.objects.get_or_create(category=cat, prodName=prodName,description = description, price=price,stock = stock,availability = availability)[0]
-	imageObject = File(open(os.path.join("images",image),'r'))
+	imageObject = File(open(os.path.join("media/images/products/",image),'r'))
 	p.image.save(image,imageObject,save = True)
 	p.save()
 	return p

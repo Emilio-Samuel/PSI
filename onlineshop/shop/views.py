@@ -11,16 +11,16 @@ def product_list(request, catSlug=None):
 	#Your code goes here
 	#queries that fill, category, categories and products
 
-	categories=Category.objects.all()
 
 	if catSlug == None:
 		category = None
+		categories=Category.objects.all()
 		products = Product.objects.all()
 	else:
-		category = Category.objects.get(Category.catSlug=catSlug)
-		products = Product.objects.get(Category.catSlug=catSlug)
-		
-
+		category = Category.objects.filter(catSlug = catSlug)[0]
+		products = Product.objects.filter(category = category)	
+		categories = None	
+	print "\n\n Category = ",category,"\n\n"
 	return render(request,'shop/list.html', {'category': category, 'categories':categories, 'products': products})
 
 
@@ -29,7 +29,7 @@ def detailProduct(request, prodId, prodSlug):
 	#query that returns a product with id=protId
 
 	product = Product.objects.get(pk=prodId)
-	return render(request, ’shop/detail.html’, {’product’: product})
+	return render(request, 'shop/detail.html', {'product': product})
 	
 
 def index(request):
@@ -37,5 +37,6 @@ def index(request):
 	product_list = Product.objects.all()
 	context_dict ={'categories': category_list,'products': product_list}
 	return render(request, 'shop/index.html', context_dict)
+
 def base(request):
 	return render(request, 'shop/base.html')

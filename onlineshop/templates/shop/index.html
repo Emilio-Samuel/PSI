@@ -12,7 +12,7 @@
 					{% for category in categories %}
 						<li>
 							
-							<a href="#">{{ category.catName }}</a>
+							<a href="{% url 'shop:product_list_by_category'  category.catSlug %}">{{ category.catName }}</a>
 						</li>
 					{% endfor %}
 				</ul>
@@ -20,12 +20,13 @@
 				<strong>There are no categories present.</strong>
 			{% endif %}	
 	    </div>
-	    {% for product in products %}
+	    
+		{% for product in products %}
 			<div class = "column">
 				<div class = "content">
-					<img src ="{product.image}" alt = "{product.prodName}">
-					<a href = "#">{{ product.prodName }} </a>
-					<p>{ product.price }</p>
+					<img src ="media/{{product.image}}" alt = {{product.prodName}}></br>
+					<a href = "{% url 'shop:detailProduct'  product.pk product.prodSlug %}">{{ product.prodName }} </a></br>
+					<p>{{ product.price }}</p></br>
 				</div>
 			</div>
 		{% endfor %}
