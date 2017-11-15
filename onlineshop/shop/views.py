@@ -19,7 +19,7 @@ def product_list(request, catSlug=None):
 	else:
 		category = Category.objects.filter(catSlug = catSlug)[0]
 		products = Product.objects.filter(category = category)	
-		categories = None	
+		categories = Category.objects.all()
 	print "\n\n Category = ",category,"\n\n"
 	return render(request,'shop/list.html', {'category': category, 'categories':categories, 'products': products})
 

@@ -16,9 +16,10 @@
 {% endblock %}
 
 {% block body_block %}
-	<div class = "row">
-		{% if categories %}
-			<div class = "fixedColumn">
+
+		 <div class = "fixedColumn">
+			<h1>Categories</h1>
+			{% if categories %}
 				<ul>
 					{% for category in categories %}
 						<li>
@@ -27,15 +28,23 @@
 						</li>
 					{% endfor %}
 				</ul>
-			</div>
-		{% endif %}	
-		{% for product in products %}
-			<div class = "column">
-				<div class = "content">
-					<img src ="/media/{{product.image}}" alt = {{product.prodName}}>
-					<a href = "#">{{ product.prodName }} </a>
-					<p>{{ product.price }}</p>
+			{% else %}
+				<strong>There are no categories present.</strong>
+			{% endif %}	
+	    </div>
+	<div class='products'>
+		<div class = "row">
+			<div class=content>
+				{% for product in products %}
+				<div class = "column">
+					<div class = "content">
+						<img src ="/media/{{product.image}}" alt = {{product.prodName}}></br>
+						<a href = "#">{{ product.prodName }} </a>
+						<p>{{ product.price }}</p>
+					</div>
 				</div>
+				{% endfor %}
 			</div>
-		{% endfor %}
+		</div>
+	</div>
 {% endblock %}

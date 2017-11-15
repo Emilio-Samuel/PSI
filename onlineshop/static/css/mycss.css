@@ -5,7 +5,7 @@
 .error {color: #FF0000;}
 /*Cabecera fija, parte de abajo fijo, menu fijo horizontal*/
 .header{
-    background-color: grey;
+    background-color:grey; 
     color: white;
     padding: 10px;
     height: 9.5%;
@@ -45,6 +45,7 @@
 .column {
     float: left;
     width: 25%;
+
 }
 
 
@@ -60,7 +61,12 @@
     background-color: white;
     padding: 10px;
     text-align: center;
+	display:block;
 }
+
+
+
+
 img{
 	width : 200px;
 	height: 200px;
@@ -78,12 +84,73 @@ img{
         width: 100%;
     }
 }
-.fixedColumn ul{
+.fixedColumn{
+	top:50px;
+	display:block;
+	float:left;
 	position: fixed;
+}
+
+.fixedColumn ul{
+
     list-style-type: none;
     margin: 0;
     padding: 0;
     width:25%;
+
 }
+
+.fixedColumn ul li a{
+
+	font-size:150%;
+}
+
+
+.detail{
+
+	padding: 1%;
+	display: inline-block;
+    background-color:grey;
+    width: 80%;
+    border-radius: 25px;
+	margin-left:10%;
+	margin-right:10%;
+	left:30%;
+}
+
+.detail .picture{
+
+	margin-right: 5%;
+    float:left;
+	height: 400px;
+	width: 400px;
+}
+
+.detail h3{
+	margin:0;
+	padding:0;
+}
+.detail h1{
+	margin:0;
+	padding:0;
+}
+
+.detail a{
+
+	font-size:125%;
+}
+
+
+.products{
+
+	margin-left:10%;
+
+}
+
+
+
+
+
+
 
 

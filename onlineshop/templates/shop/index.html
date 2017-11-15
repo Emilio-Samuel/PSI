@@ -5,8 +5,9 @@
 	<h1>Index Page</h1>
 {% endblock %}
 {% block body_block %}
-	<div class = "row">
+
         <div class = "fixedColumn">
+			<h1>Categories</h1>
 			{% if categories %}
 				<ul>
 					{% for category in categories %}
@@ -20,15 +21,19 @@
 				<strong>There are no categories present.</strong>
 			{% endif %}	
 	    </div>
-	    
-		{% for product in products %}
-			<div class = "column">
-				<div class = "content">
-					<img src ="media/{{product.image}}" alt = {{product.prodName}}></br>
-					<a href = "{% url 'shop:detailProduct'  product.pk product.prodSlug %}">{{ product.prodName }} </a></br>
-					<p>{{ product.price }}</p></br>
+	<div class='products'>
+		<div class = "row">
+			<div class= "content">
+			{% for product in products %}
+				<div class = "column">
+					<div class = "content">
+						<img src ="media/{{product.image}}" alt = {{product.prodName}}></br>
+						<a href = "{% url 'shop:detailProduct' product.pk product.prodSlug %}">{{ product.prodName }} </a></br>
+						<p>{{ product.price }}</p></br>
+					</div>
 				</div>
-			</div>
-		{% endfor %}
+			{% endfor %}
+			</div>	
+		</div>
 	</div>
 {% endblock %}
