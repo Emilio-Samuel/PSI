@@ -14,7 +14,7 @@ static_path = os.path.join(base_path,"static")
 
 #python ./manage.py test shop.tests.viewsTests --keepdb
 
-DEBUG = True
+DEBUG = False
 from PIL import Image
 from StringIO import StringIO
 from django.core.files.base import File
