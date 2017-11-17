@@ -23,7 +23,7 @@ from shop import views
 urlpatterns = [
     url(r'^$',views.product_list,name='product_list'),
     url(r'^admin/', include(admin.site.urls)),
-	url(r'^shop/', include('shop.urls',namespace = 'shop')),
+	url(r'^shop/', include('shop.urls')),
 ]
 urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 urlpatterns  += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

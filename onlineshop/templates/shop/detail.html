@@ -9,7 +9,7 @@
 		
 		<img class="picture" src ="/media/{{product.image}}" alt = {{product.prodName}}></br>
 		<h1>{{product.prodName}}</h1>
-		<a href = "{% url 'shop:product_list_by_category'  product.category %}">{{ product.category }}</a></br>
+		<a href = "{% url 'product_list_by_category'  product.category %}">{{ product.category }}</a></br>
 		<h3>Price:{{product.price}} €</h3>
 			<div class = "description">
 				{{product.description}}

@@ -80,7 +80,7 @@ class viewsTests(TestCase):
                 self.assertIn(b"fileName_%d_%d"%(counterCat,counterProd), response.content)
 
     def test_produnct_list_cat_0(self):
-        response = self._client.get(reverse('shop:product_list_by_category',
+        response = self._client.get(reverse('product_list_by_category',
                                             kwargs={'catSlug':'cat_0'}), follow=True)
         for counter in range(0, 3):
             self.assertIn(b'%s' % ("cat_%d" % counter), response.content)
@@ -94,7 +94,7 @@ class viewsTests(TestCase):
     def test_product_detail_fileName_0_0(self):
         prodName='fileName_0_0'
         p = Product.objects.get(prodName = prodName)
-        response = self._client.get(reverse('shop:product_detail',
+        response = self._client.get(reverse('product_detail',
                                             kwargs={'id':p.id,
                                                     'prodSlug':p.prodSlug}), follow=True)
         self.assertIn   (b'cat_0', response.content)
