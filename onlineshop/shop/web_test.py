@@ -20,19 +20,16 @@ class onLineShopTester(unittest.TestCase):
     admin_url    = base_url + "admin/"
     addCategoryPath = "shop/category/add/"
     addProductPath  = "shop/product/add/"
-    catList     = ["shirts", "Pants", "jackets"]
-    productDict = {catList[0]: ["Pepe t-shirt",
-                 "html t-shirt",
-                 "futile t-shirt",
-                 "TayTay t-shirt"],
-                   catList[1]: ["manly pants",
-                 "LWYMMD pants",
-                 "Gorgeous pants"],
-                  catList[2]: ["manly jacket",
-                 "lady jacket"]
+    catList     = ["Angels", "Butterflies", "Kokopelli"]
+    productDict = {catList[0]: ["angel-tattoo-art",
+                 "black-angel-tattoo"],
+                   catList[1]: ["butterflies-tattoos",
+                 "butterfly-swirls-tattoo"],
+                  catList[2]: ["dancing-kokopelli",
+                 "kokopelli-dancing"]
                 }
-    chromeDriver = "/home/alumnos/e299352/workspace/chromedriver/chromedriver"
-    imagesPath = "/home/alumnos/e299352/workspace/PSI/onlineshop/images"
+    chromeDriver = "/home/emilio/Documents/PSI/P3/Semana4/PSI/onlineshop/shop/chromedriver"
+    imagesPath = "/home/emilio/Documents/PSI/P3/Semana4/PSI/onlineshop/images/"
 
     def setUp(self):
 #        self.driver = webdriver.Firefox()

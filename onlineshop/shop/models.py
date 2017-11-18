@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-import datetime
 
+from datetime import datetime
 from django.db import models
 from django.template.defaultfilters import slugify
 # Create your models here.
@@ -24,8 +24,8 @@ class Product(models.Model):
 	price       =  models.FloatField(null = False, default = 0)
 	stock       =  models.IntegerField(default=1, null = False)
 	availability=  models.BinaryField(default = bin(1), null = False)
-	created     =  models.DateTimeField(default = datetime.datetime.now)
-	updated     =  models.DateTimeField(default = datetime.datetime.now)
+	created     =  models.DateTimeField(default = datetime.now())
+	updated     =  models.DateTimeField(default = datetime.now())
 	
 	def save(self, *args, **kwargs):
 		self.prodSlug = slugify(self.prodName)
