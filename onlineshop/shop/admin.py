@@ -7,7 +7,7 @@ from shop.models import Category,Product
 # Register your models here.
 
 class ProductAdmin(admin.ModelAdmin):
-	prepopulated_fields = {'prodSlug':('prodName',)}    
+    prepopulated_fields = {'prodSlug':('prodName',)}    
     list_display = ('prodName', 'prodSlug', 'price','stock', 'availability', 'created', 'updated')
 
 class CategoryAdmin(admin.ModelAdmin):
