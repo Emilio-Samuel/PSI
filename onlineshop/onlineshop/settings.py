@@ -28,7 +28,7 @@ SECRET_KEY = 'g^t)6pj$is&3)+oj#yy_te^feh)!53*02bjf&dofq*$7!=b78u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ u'salty-peak-70260.herokuapp.com',u'127.0.0.1']
+ALLOWED_HOSTS = [ u'aqueous-plateau-26905.herokuapp.com',u'127.0.0.1']
 
 
 
@@ -124,7 +124,7 @@ USE_L10N = True
 USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticHeroku')
 STATIC_PATH  =  os.path.join(BASE_DIR , 'static' )
 STATIC_URL  =   '/static/'
 STATICFILES_DIRS  =  (STATIC_PATH,)

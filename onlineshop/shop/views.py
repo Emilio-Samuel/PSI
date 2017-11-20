@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.shortcuts import render
 from django.views import generic
-from shop.models import Product,Category
+from shop.models import *
 from django.http import Http404
 
 def product_list(request, catSlug=None):
