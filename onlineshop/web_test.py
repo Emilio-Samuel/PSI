@@ -12,10 +12,15 @@ import unittest, time, os
 from collections import OrderedDict
 from loremipsum import get_paragraphs, get_sentences
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+CHROMEDRIVER_PATH = os.path.join(BASE_DIR,'onlineshop/shop/chromedriver')
+
+IMAGES_PATH = os.path.join(BASE_DIR,'onlineshop/images/')
 class onLineShopTester(unittest.TestCase):
     username    = "alumnodb"
     passwd      = "alumnodb"
-    #base_url    = "https://rocky-inlet-76734.herokuapp.com/"
+    base_url    = "https://rocky-inlet-76734.herokuapp.com/"
     base_url     = "http://127.0.0.1:8000/"
     admin_url    = base_url + "admin/"
     addCategoryPath = "shop/category/add/"
@@ -37,8 +42,8 @@ class onLineShopTester(unittest.TestCase):
                  "brown-coat",
                  "blue-coat"]
                 }
-    chromeDriver = "/home/emilio/Documents/Universidad/PSI/herokuWeek4/onlineshop/shop/chromedriver"
-    imagesPath = "/home/emilio/Documents/Universidad/PSI/herokuWeek4/onlineshop/images/"
+    chromeDriver =CHROMEDRIVER_PATH
+    imagesPath = IMAGES_PATH
 
     def setUp(self):
 #        self.driver = webdriver.Firefox()
