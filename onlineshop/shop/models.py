@@ -19,7 +19,7 @@ class Category(models.Model):
 class Product(models.Model):
 	category 	=  models.ForeignKey(Category, null = False)
 	prodName	=  models.CharField(max_length=128, unique=True , null=False)
-	prodSlug 	=  models.SlugField(unique=True , null=False)
+	prodSlug 	=  models.SlugField(unique=True)
 	image    	=  models.ImageField(upload_to="images/products", blank=True, null=True)
 	description	=  models.CharField(max_length=128, unique=True , null=False)
 	price       =  models.FloatField(null = False, default = 0)
