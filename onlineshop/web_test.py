@@ -42,6 +42,7 @@ class onLineShopTester(unittest.TestCase):
                  "brown-coat",
                  "blue-coat"]
                 }
+    print CHROMEDRIVER_PATH
     chromeDriver =CHROMEDRIVER_PATH
     imagesPath = IMAGES_PATH
 
