@@ -1,3 +1,4 @@
+#AUTHOR EMILIO ACED FUENTES, ROBERTO ALCOVER COUSO
 from __future__ import unicode_literals
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
@@ -21,7 +22,6 @@ def product_list(request, catSlug=None):
 		products = Product.objects.filter(category = category)	
 		categories = Category.objects.all()
 
-	print "\n\n Category = ",category,"\n\n"
 	return render(request,'shop/list.html', {'category': category, 'categories':categories, 'products': products})
 
 

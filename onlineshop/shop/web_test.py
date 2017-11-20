@@ -20,7 +20,7 @@ IMAGES_PATH = os.path.join(BASE_DIR,'images/')
 class onLineShopTester(unittest.TestCase):
     username    = "alumnodb"
     passwd      = "alumnodb"
-    base_url    = "https://afternoon-brushlands-95904.herokuapp.com/"
+    base_url    = "https://calm-cliffs-53897.herokuapp.com/"
     #base_url     = "http://127.0.0.1:8000/"
     admin_url    = base_url + "admin/"
     addCategoryPath = "shop/category/add/"
@@ -42,7 +42,6 @@ class onLineShopTester(unittest.TestCase):
                  "brown-coat",
                  "blue-coat"]
                 }
-    print CHROMEDRIVER_PATH
     chromeDriver =CHROMEDRIVER_PATH
     imagesPath = IMAGES_PATH
 
