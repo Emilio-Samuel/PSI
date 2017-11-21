@@ -20,8 +20,8 @@ IMAGES_PATH = os.path.join(BASE_DIR,'images/')
 class onLineShopTester(unittest.TestCase):
     username    = "alumnodb"
     passwd      = "alumnodb"
-    #base_url    = "https://guarded-crag-10589.herokuapp.com/"
-    base_url     = "http://127.0.0.1:8000/"
+    base_url    = "https://polar-stream-18816.herokuapp.com/ "
+    #base_url     = "http://127.0.0.1:8000/"
     admin_url    = base_url + "admin/"
     addCategoryPath = "shop/category/add/"
     addProductPath  = "shop/product/add/"
