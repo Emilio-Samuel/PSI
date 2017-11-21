@@ -28,7 +28,7 @@ SECRET_KEY = 'g^t)6pj$is&3)+oj#yy_te^feh)!53*02bjf&dofq*$7!=b78u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ u'calm-cliffs-53897.herokuapp.com',u'127.0.0.1']
+ALLOWED_HOSTS = [ u'guarded-crag-10589.herokuapp.com',u'127.0.0.1']
 
 
 
