@@ -18,7 +18,7 @@
 {% block body_block %}
 
 		 <div class = "fixedColumn">
-			<h1>Categories</h1>
+			<a href="{% url 'product_list'%}"><h2>Categories</h2></a>
 			{% if categories %}
 				<ul>
 					{% for category in categories %}
